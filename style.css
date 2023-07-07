@@ -27,6 +27,20 @@ h1 {
     border-radius: 24px;
 }
 
+.contacts {
+    padding: 12px;
+}
+
+.code {
+    padding: 12px;
+}
+
+.code_example {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+}
+
 .intro {
     padding: 24px;
     display: flex;
@@ -52,6 +66,37 @@ h1 {
 
 .intro p {
     margin: 12px;
+}
+
+.skills {
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+}
+
+.skills h2 {
+    text-align: center;
+}
+
+.skills table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.skills th,
+.skills td {
+    padding: 8px;
+    text-align: left;
+}
+
+.skills th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    padding: 4px;
+}
+
+.skills tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
 
 footer {
