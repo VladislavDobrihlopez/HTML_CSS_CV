@@ -53,3 +53,8 @@ h1 {
 .intro p {
     margin: 12px;
 }
+
+footer {
+    margin: 8px;
+    text-align: center;
+}
