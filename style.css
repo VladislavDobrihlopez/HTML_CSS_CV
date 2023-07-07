@@ -1,0 +1,55 @@
+h1 {
+    text-align: center;
+}
+
+.body_medium {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.title_large {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 48px;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+.photo img {
+    height: 255px;
+    width: 200px;
+    border-radius: 25% 25% 25% 25%;
+}
+
+.surface {
+    box-shadow: 4px 4px 40px 4px rgba(99, 94, 94, 0.2);
+    padding: 24px;
+    border-radius: 24px;
+}
+
+.intro {
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cv_section {
+    margin: 4px 0px 4px 0px;
+    padding: 12px 0px 4px 24px;
+    box-shadow: 0px 0px 1px 0px rgba(64, 65, 68, 0.2);
+    border-radius: 0px;
+    /* transition: box-shadow, margin, border-radius 1.5s ease-out; */
+    transition: all 0.5s ease-out;
+}
+
+.cv_section:hover {
+    margin: 4px 0px 8px 8px;
+    background-color: #E9EBF8;
+    border-radius: 24px;
+    box-shadow: -4px -4px 12px 2px rgba(64, 65, 68, 0.2);
+}
+
+.intro p {
+    margin: 12px;
+}
