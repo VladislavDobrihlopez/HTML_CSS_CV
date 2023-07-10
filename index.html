@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My cv</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="surface">
+        <header>
+            <h1 class="cool_title">Curriculum vitae</h1>
+            <nav>
+                <ul>
+                    <li class="nav-option"><a href="#about_me_section">About me</a></li>
+                    <li class="nav-option"><a href="#skills_section">Skills</a></li>
+                    <li class="nav-option"><a href="#experience_section">Experience</a></li>
+                    <li class="nav-option"><a href="#cources_section">Cources and trainings</a></li>
+                    <li class="nav-option"><a href="#code_example_section">Code example</a></li>
+                    <li class="nav-option"><a href="#contacts_section">Contacts</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="about_me_section" class="about_me cv_section body_medium">
+                <h2>About me</h2>
+                <div class="intro">
+                    <div class="photo">
+                        <img src="images/my_photo.png" alt="My photo">
+                    </div>
+                    <div class="about_me_info">
+                        <p><strong>Vladislav Voitov</strong></p>
+                        <p>Android developer</p>
+                        <p>I’m passionate about android apps development. I started my programming journey in the
+                            9th
+                            grade having participated in both online and offline programming competitions. Since
+                            then
+                            I’ve tried many frameworks and chose the most engaging one - mobile development.</p>
+                        <p>Higher education: a student at the Belarusian-Russian university specializing in software
+                            engineering (2nd year)
+
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section id="skills_section" class="my_skills cv_section body_medium">
+                <h2>Skills</h2>
+                <div class="skills">
+                    <table>
+                        <tr>
+                            <th>Hard Skills</th>
+                            <th>Soft Skills</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>English B1</li>
+                                    <li>Kotlin, Java</li>
+                                    <li>RxJava2, Kotlin Flows and Coroutines</li>
+                                    <li>Jetpack Compose</li>
+                                    <li>Dagger2</li>
+                                    <li>MVVM, MVI</li>
+                                    <li>Data/View Binding</li>
+                                    <li>REST API</li>
+                                    <li>Room, Retrofit, Gson</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Goal-oriented</li>
+                                    <li>Responsible</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+            <section id="experience_section" class="cv_section body_medium">
+                <h2>My experience</h2>
+                <div class="skills">
+                    <table>
+                        <tr>
+                            <th>Projects</th>
+                            <th>Stack</th>
+                            <th>Link</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>VK mobile client</li>
+                                    <li>Diabetes diary</li>
+                                    <li>Welding control system</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Jetpack compose, Kotlin flows + coroutines, Dagger2, Room, Retrofit ,
+                                        Picasso, MVVM </li>
+                                    <li>Jetpack compose, Kotlin flows + coroutines, Hilt, Mongo Db Atlas Realm,
+                                        Retrofit , Coil, MVI, Multi module architecture </li>
+                                    <li>Android View, RxJava2, Dagger2, Room, Retrofit, MVVM </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li><a href="https://github.com/VladislavDobrihlopez/VkNewsClient/tree/develop">
+                                            github</a></li>
+                                    <li><a
+                                            href="https://github.com/VladislavDobrihlopez/YourDiabetesDiary/tree/develop">
+                                            github</a></li>
+                                    <li><a href="https://github.com/VladislavDobrihlopez/WeldingStartup"> github</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+            <section id="cources_section" class="cv_section body_medium">
+                <h2>Cources and trainings</h2>
+                <h3>Successfully completed</h3>
+                <ul>
+                    <li>Android + Java from scratch (Andrey Sumin)</li>
+                    <li>Kotlin quick start (Andrey Sumin)</li>
+                    <li>Android professional (Andrey Sumin)</li>
+                    <li>Jetpack Compose (Andrey Sumin)</li>
+                    <li>Android multithreading masterclass (Vitaly Zukanov)</li>
+                </ul>
+
+                <h3>In Progress</h3>
+                <ul>
+                    <li>Kotlin coroutines + Flow (Lukas Lechner)</li>
+                </ul>
+            </section>
+            <section id="code_example_section" class="cv_section">
+                <h2>Code Example</h2>
+                <div class="code">
+                    <p class="body_medium">Kotlin</p>
+                    <pre class="code_example">
+                        <code>
+                            private suspend fun retrieveFeedData(): FeedResponseResult {
+                                val placeToStartLoadingFrom = nextPostFrom
+                        
+                                if (vkHasNothingToRecommendAnymore()) {
+                                    return FeedResponseResult.EndOfNewsFeed
+                                }
+                        
+                                val feedResponseResult = try {
+                                    val response = if (placeToStartLoadingFrom == null) {
+                                        recommendationsFeedApiService.loadRecommendations(getUserToken())
+                                    } else {
+                                        recommendationsFeedApiService.loadRecommendations(
+                                            getUserToken(),
+                                            placeToStartLoadingFrom
+                                        )
+                                    }
+                                    FeedResponseResult.Success(response)
+                                } catch (_: Exception) {
+                                    FeedResponseResult.Failure
+                                }
+                        
+                                if (feedResponseResult is FeedResponseResult.Success) {
+                                    nextPostFrom = feedResponseResult.newsFeedContentResponseDto.content.nextFrom
+                                    val mappedPosts =
+                                        postMapper.mapDtoResponseToEntitiesOfPostItem(feedResponseResult.newsFeedContentResponseDto)
+                                    _posts.addAll(mappedPosts)
+                                }
+                                return feedResponseResult
+                            }
+                        </code></pre>
+                </div>
+            </section>
+            <section id="contacts_section" class="cv_section body_medium">
+                <h2>Contacts</h2>
+                <div class="contacts">
+                    <ul>
+                        <li><strong>Telegram </strong> <a href="https://t.me/dobrihlopez"> link</a></li>
+                        <li><strong>Email </strong> dobrihlopez@gmail.com</li>
+                        <li><strong>Social networks </strong> <a href="https://vk.com/dobrihlopez">VK</a>
+                        </li>
+                        <li><strong>Mobile +37529xxx2131</strong></li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>Vladislav Voitov July, 2023</p>
+            <p><a href="https://github.com/VladislavDobrihlopez">GitHub</a></p>
+        </footer>
+    </div>
+</body>
+</html>
